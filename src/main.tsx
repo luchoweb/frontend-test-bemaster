@@ -1,9 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { RouterProvider } from "react-router-dom";
 import { AuthProvider } from "./provider/AuthProvider.tsx";
-
-// Pages
-import App from "./App.tsx";
+import { router } from "./routes.tsx";
 
 // Styles
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -13,7 +12,7 @@ import "./index.scss";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <AuthProvider>
-      <App />
+      <RouterProvider router={router} />
     </AuthProvider>
   </React.StrictMode>
 );
