@@ -24,20 +24,3 @@ export const signIn = async ({ email, password }: Props) => {
 export const signOut = async () => {
   await auth.signOut();
 };
-
-export const errorTranslate = (error: string) => {
-  const commonErrors = [
-    {
-      code: "auth/invalid-credential",
-      message: "Please check your credentials and try again.",
-    },
-    {
-      code: "general",
-      message: "An unexpected error has ocurred, please try again.",
-    },
-  ];
-
-  const getError = commonErrors.find((err) => err.code === error);
-
-  return getError?.message ?? "Error unknown!";
-};

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { errorTranslate, signIn } from "../../../firebase/utils";
+import {signIn } from "../../../firebase/utils";
+import { emailValidation } from "../../../utils/validations";
+import { errorTranslate } from "../../../utils/errors";
 
 import "./style.scss";
 
@@ -13,9 +15,13 @@ const LoginPage = () => {
   const [errorMsg, setErrorMsg] = useState("");
 
   const login = async () => {
-    setError(false);
+    if (!emailValidation(email)) {
+      setError(true);
+      setErrorMsg("invalid-email");
+      return;
+    }
 
-    if (email && password) {
+    if ((email && password) && emailValidation(email)) {
       const response = await signIn({ email, password });
 
       if (response.error) {
@@ -24,6 +30,7 @@ const LoginPage = () => {
         return;
       }
 
+      setError(false);
       navigate("/home");
     }
   };
