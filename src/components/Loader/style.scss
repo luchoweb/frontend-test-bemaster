@@ -1,0 +1,50 @@
+.loader {
+  background-color: var(--bs-dark);
+  bottom: 0;
+  display: grid;
+  left: 0;
+  place-content: center center;
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  &-icon {
+    height: 15px;
+    aspect-ratio: 6;
+    display: flex;
+
+    &::before,
+    &::after {
+      content: "";
+      flex: 1;
+      padding-left: calc(100% / 6);
+      background: radial-gradient(
+          closest-side at calc(100% / 3) 50%,
+          #ffffff 90%,
+          #c8c8c800
+        )
+        0/75% 100% content-box;
+      animation: l20 2s infinite;
+    }
+
+    &::after {
+      --_s: -1;
+    }
+  }
+}
+
+@keyframes l20 {
+  0% {
+    transform: scale(var(--_s, 1)) translate(0) rotate(0);
+  }
+  25% {
+    transform: scale(var(--_s, 1)) translate(-25%) rotate(0);
+  }
+  50% {
+    transform: scale(var(--_s, 1)) translate(-25%) rotate(1turn);
+  }
+  75%,
+  100% {
+    transform: scale(var(--_s, 1)) translate(0) rotate(1turn);
+  }
+}

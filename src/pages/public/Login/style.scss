@@ -1,0 +1,17 @@
+.login {
+  background: var(--bs-dark);
+  display: grid;
+  min-height: 500px;
+  height: 100vh;
+  place-content: center center;
+  width: 100%;
+
+  &-box {
+    width: 310px;
+  }
+
+  &-form {
+    background-color: white;
+    border-radius: 10px;
+  }
+}

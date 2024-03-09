@@ -8,15 +8,19 @@ interface Props {
 }
 
 export const AuthProvider = ({ children }: Props) => {
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useState<User | null>();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((firebaseUser) => {
       setUser(firebaseUser);
+      setIsLoading(false);
     });
 
     return unsubscribe;
-  }, []);
+  }, [setUser]);
 
-  return <AuthContext.Provider value={user}>{children}</AuthContext.Provider>;
+  const value = {user, isLoading};
+
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };

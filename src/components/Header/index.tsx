@@ -1,3 +1,4 @@
+import { signOut } from "../../firebase/utils";
 import Navbar from "../Navbar";
 
 const Header = () => {
@@ -10,7 +11,7 @@ const Header = () => {
             <Navbar />
           </div>
           <div className="col col-4">
-            <button className="btn btn-sm btn-danger">
+            <button className="btn btn-sm btn-danger" onClick={() => signOut()}>
               <i className="bi bi-box-arrow-right"></i>
             </button>
           </div>
