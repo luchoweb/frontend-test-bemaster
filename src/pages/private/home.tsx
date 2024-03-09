@@ -1,7 +1,11 @@
-const DashboardPage = () => {
+import Layout from "./layout";
+
+const HomePage = () => {
   return (
-    <h1>DASHBOARD</h1>
+    <Layout>
+      <h1>HOME</h1>
+    </Layout>
   );
 }
 
-export default DashboardPage;
+export default HomePage;
