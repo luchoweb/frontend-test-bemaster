@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="col-6">
             <p className="m-0 text-light text-end">
               <small>
-                Made with <i className="bi bi-heart"></i> by Lucho Web
+                Made by Lucho Web
               </small>
             </p>
           </div>
