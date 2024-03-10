@@ -9,6 +9,14 @@ export type Company = {
   name: string;
 };
 
+export type Video = {
+  key: string;
+  size: number;
+  type: string;
+  site: string;
+  name: string;
+}
+
 export type Movie = {
   id: number;
   original_title: string;

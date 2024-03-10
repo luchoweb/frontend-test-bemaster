@@ -77,10 +77,9 @@ const MovieHero = ({ movie }: Props) => {
               </ul>
 
               <div className="movie-buttons d-flex gap-4 align-items-center mb-4">
-                <button className="btn btn-light py-2 px-4">
-                  <i className="bi bi-play me-2"></i>
-                  <span>Play Now</span>
-                </button>
+                <Link to={`/player/${movie.id}`} className="btn btn-light py-2 px-4">
+                  <i className="bi bi-play me-2"></i> Play Now
+                </Link>
 
                 <button className="btn btn-lg p-0" title="Add to Favorites">
                   <i className="bi bi-bookmark text-light"></i>

@@ -67,3 +67,26 @@ export const getMovieInfo = async (movieId: string | undefined) => {
       });
   }
 };
+
+export const getMovieVideos = async (movieId: string | undefined) => {
+  if(movieId) {
+    return axios
+      .get(`${baseURL}/movie/${movieId}/videos`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        return {
+          error: false,
+          videos: response.data,
+        };
+      })
+      .catch((error) => {
+        return {
+          error: error.message,
+          videos: {},
+        };
+      });
+  }
+}

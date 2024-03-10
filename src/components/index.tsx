@@ -9,4 +9,5 @@ export { default as MovieHero } from "./MovieHero";
 export { default as MovieInfo } from "./MovieInfo";
 export { default as Navbar } from "./Navbar";
 export { default as NoContent } from "./NoContent";
+export { default as VideoPlayer } from "./VideoPlayer";
 export { default as PrivateRoute } from "./PrivateRoute";

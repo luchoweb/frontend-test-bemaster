@@ -5,7 +5,7 @@ import { PrivateRoute } from "./components";
 import { LoginPage } from "./pages/public";
 
 // Private Pages
-import { GenrePage, HomePage, MoviePage, GenresPage } from "./pages/private";
+import { GenrePage, HomePage, MoviePage, GenresPage, PlayerPage } from "./pages/private";
 
 export const router = createBrowserRouter([
   {
@@ -41,6 +41,14 @@ export const router = createBrowserRouter([
     element: (
       <PrivateRoute>
         <GenresPage />
+      </PrivateRoute>
+    ),
+  },
+  {
+    path: "/player/:id",
+    element: (
+      <PrivateRoute>
+        <PlayerPage />
       </PrivateRoute>
     ),
   },

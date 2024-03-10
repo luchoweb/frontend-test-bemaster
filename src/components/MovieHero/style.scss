@@ -48,7 +48,10 @@ $headerHeight: 72px;
 
   .container {
     position: relative;
-    text-shadow: 0 0 7px black;
     z-index: 1;
+
+    p, span, small, b, strong {
+      text-shadow: 0 0 7px black;
+    }
   }
 }

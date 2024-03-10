@@ -60,7 +60,7 @@ const GenrePage = () => {
                 {movies.map((movie: Movie) => (
                   <div
                     className="col col-6 col-md-4 col-lg-3 mb-4"
-                    key={movie.original_title}
+                    key={movie.id}
                   >
                     <MovieCard movie={movie} />
                   </div>

@@ -1,0 +1,18 @@
+.video-player {
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  iframe {
+    height: 100vh;
+  }
+
+  .btn {
+    left: 1rem;
+    position: fixed;
+    top: 1rem;
+  }
+}

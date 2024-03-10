@@ -1,7 +1,10 @@
 import { ReactNode, useContext } from "react";
 import { Navigate, ScrollRestoration } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import { AuthContext } from "../context/AuthContext";
 import { Loader } from ".";
+
+import "react-toastify/dist/ReactToastify.css";
 
 interface Props {
   children: ReactNode;
@@ -14,9 +17,12 @@ const PrivateRoute = ({ children }: Props) => {
     return <Navigate to="/" replace />;
   }
 
-  return isLoading ? <Loader /> : (
+  return isLoading ? (
+    <Loader type="screen" />
+  ) : (
     <>
       {children}
+      <ToastContainer />
       <ScrollRestoration />
     </>
   );
