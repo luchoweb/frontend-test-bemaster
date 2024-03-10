@@ -1,3 +1,4 @@
 export const APP = {
-  NAME: "JEDI TV"
+  NAME: "JEDI TV",
+  VERSION: "1.0.0"
 }

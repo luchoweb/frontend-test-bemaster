@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container">
         <div className="row">
           <div className="col-6">
-            <p className="text-light m-0">{APP.NAME}</p>
+            <p className="text-light m-0">{APP.NAME} <small>v{APP.VERSION}</small></p>
           </div>
           <div className="col-6">
             <p className="m-0 text-light text-end">
