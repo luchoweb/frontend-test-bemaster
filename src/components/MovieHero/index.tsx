@@ -66,10 +66,7 @@ const MovieHero = ({ movie }: Props) => {
                   movie.genres.map((gender) => (
                     <li key={gender.name}>
                       <Link
-                        to={`/genre/${gender.id}${gender.name.replace(
-                          " ",
-                          "-"
-                        )}`}
+                        to={`/genre/${gender.id}-${gender.name.replace(/ /g, "-")}`}
                         className="text-decoration-none text-light me-2"
                       >
                         {gender.name}

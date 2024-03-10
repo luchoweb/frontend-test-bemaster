@@ -12,7 +12,7 @@ const MovieCard = ({ movie }: Props) => {
 
   return (
     <Link
-      to={`/movie/${movie.id}-${movie.original_title.replace(" ", "-")}`}
+      to={`/movie/${movie.id}-${movie.original_title.replace(/ /g, "-").toLowerCase()}`}
       className="movie-card bg-dark text-decoration-none text-center p-5"
       style={{
         backgroundImage: `url(${bgBaseUrl}${movie.backdrop_path})`,
