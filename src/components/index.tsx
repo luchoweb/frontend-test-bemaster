@@ -1,5 +1,9 @@
-export { default as PrivateRoute } from "./PrivateRoute";
 export { default as CategoryCard } from "./CategoryCard";
-export { default as MovieCard } from "./MovieCard";
+export { default as Footer } from "./Footer";
 export { default as Header } from "./Header";
-export { default as Loader }  from "./Loader";
+export { default as HomeHero } from "./HomeHero";
+export { default as Loader } from "./Loader";
+export { default as MovieCard } from "./MovieCard";
+export { default as MovieHero } from "./MovieHero";
+export { default as Navbar } from "./Navbar";
+export { default as PrivateRoute } from "./PrivateRoute";

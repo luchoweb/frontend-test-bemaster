@@ -1,7 +1,21 @@
-const MovieCard = () => {
-  return (
-    <h1>MOVIE</h1>
-  );
+import { Link } from "react-router-dom";
+import { Genre } from "../../types/movies";
+
+import "./style.scss";
+
+interface Props {
+  category: Genre;
 }
 
-export default MovieCard;
+const CategoryCard = ({ category }: Props) => {
+  return (
+    <Link
+      to={`/category/${category.id}`}
+      className="category-card d-block bg-dark text-light text-decoration-none text-center p-5"
+    >
+      {category.name}
+    </Link>
+  );
+};
+
+export default CategoryCard;

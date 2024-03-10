@@ -13,6 +13,7 @@ VITE_FIREBASE_APP_ID = ""
 # MOVIES API
 VITE_MOVIES_API_KEY = ""
 VITE_MOVIES_API_TOKEN = ""
+VITE_MOVIES_BASE_URL_POSTER = ""
 ```
 
 Este archivo será enviado en el correo de entrega de la prueba.

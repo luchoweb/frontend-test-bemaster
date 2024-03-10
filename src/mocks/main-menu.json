@@ -1,0 +1,17 @@
+[
+  {
+    "icon": "house",
+    "label": "Home",
+    "link": "/home"
+  },
+  {
+    "icon": "list-ul",
+    "label": "Categories",
+    "link": "/categories"
+  },
+  {
+    "icon": "gear",
+    "label": "Settings",
+    "link": "/settings"
+  }
+]

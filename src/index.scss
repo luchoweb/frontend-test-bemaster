@@ -5,6 +5,12 @@
 }
 
 body {
+  background: rgb(125, 129, 131);
+  background: radial-gradient(
+    circle,
+    rgb(67, 70, 71) 0%,
+    rgba(50, 60, 70, 1) 100%
+  );
   font-family: var(--font-family), sans-serif;
   font-optical-sizing: auto;
   font-weight: var(--fw-normal);
@@ -20,4 +26,8 @@ h6,
 b,
 strong {
   font-weight: var(--fw-bold);
+}
+
+header {
+  z-index: 9999;
 }

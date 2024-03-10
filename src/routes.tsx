@@ -5,7 +5,7 @@ import { PrivateRoute } from "./components";
 import { LoginPage } from "./pages/public";
 
 // Private Pages
-import { HomePage } from "./pages/private";
+import { CategoryPage, HomePage, MoviePage } from "./pages/private";
 
 export const router = createBrowserRouter([
   {
@@ -19,5 +19,25 @@ export const router = createBrowserRouter([
         <HomePage />
       </PrivateRoute>
     ),
+  },
+  {
+    path: "/movie/:id",
+    element: (
+      <PrivateRoute>
+        <MoviePage />
+      </PrivateRoute>
+    ),
+  },
+  {
+    path: "/category/:id",
+    element: (
+      <PrivateRoute>
+        <CategoryPage />
+      </PrivateRoute>
+    ),
+  },
+  {
+    path: "*",
+    element: <p>404</p>,
   },
 ]);
