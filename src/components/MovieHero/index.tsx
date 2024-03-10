@@ -1,10 +1,9 @@
+import { SyntheticEvent } from "react";
 import { Link } from "react-router-dom";
-
-import { Movie } from "../../types/movies";
+import { Movie } from "../../types";
 import { getMovieYear } from "../../utils/dates";
 
 import "./style.scss";
-import { SyntheticEvent } from "react";
 
 interface Props {
   movie: Movie | undefined;

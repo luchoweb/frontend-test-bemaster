@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getMovieInfo } from "../../services/api-movies";
-import { Movie } from "../../types/movies";
+import { Movie } from "../../types";
 
 import Layout from "./layout";
 import { MovieHero } from "../../components";

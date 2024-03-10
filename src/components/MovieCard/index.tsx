@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Movie } from "../../types/movies";
+import { Movie } from "../../types";
 
 import "./styles.scss";
 

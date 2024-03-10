@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getCategories } from "../../services/api-movies";
-import { Genre } from "../../types/movies";
+import { Genre } from "../../types";
 
 import { GenreCard, HomeHero } from "../../components";
 import Layout from "./layout";
