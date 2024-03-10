@@ -17,7 +17,7 @@ const HomePage = () => {
     };
 
     getGenres();
-  }, [genres]);
+  }, []);
 
   return (
     <Layout classesName="movie-page">

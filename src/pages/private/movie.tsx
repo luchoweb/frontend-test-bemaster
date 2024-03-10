@@ -4,6 +4,7 @@ import { getMovieInfo } from "../../services/api-movies";
 import { Company, Movie } from "../../types";
 import { getMovieYear } from "../../utils/dates";
 import { formatCurrency } from "../../utils/format";
+import { APP } from "../../utils/constants";
 
 import Layout from "./layout";
 import { Loader, MovieHero } from "../../components";
@@ -12,7 +13,7 @@ const MoviePage = () => {
   const { slug } = useParams();
   const params = slug?.split("-");
 
-  const { VITE_MOVIES_BASE_URL_LOGO: imageBaseUrl } = import.meta.env;
+  const { BASE_URL_MOVIE_IMAGES: imageBaseUrl } = APP;
 
   const [movie, setMovie] = useState<Movie | undefined>();
   const [isLoading, setIsLoading] = useState(true);
@@ -27,9 +28,7 @@ const MoviePage = () => {
     };
 
     getMovie();
-  }, [slug]);
-
-  console.log(movie);
+  }, []);
 
   return (
     <Layout classesName="movie-page">

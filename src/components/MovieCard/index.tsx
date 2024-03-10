@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 import { Movie } from "../../types";
+import { APP } from "../../utils/constants";
 
 import "./styles.scss";
-import { APP } from "../../utils/constants";
 
 interface Props {
   movie: Movie;
 }
 
 const MovieCard = ({ movie }: Props) => {
-  const { BASE_URL_MOVIE_BG: bgBaseUrl } = APP;
+  const { BASE_URL_MOVIE_IMAGES: bgBaseUrl } = APP;
 
   return (
     <Link

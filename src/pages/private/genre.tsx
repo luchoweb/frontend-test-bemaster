@@ -40,7 +40,7 @@ const GenrePage = () => {
                 Loading content...
               </p>
             </div>
-          ) : movies?.length ? (
+          ) : !isLoading && movies?.length ? (
             <>
               <Link
                 to={"/back"}
@@ -57,7 +57,7 @@ const GenrePage = () => {
               <h3 className="text-light mt-3 mb-3">{genreName}</h3>
 
               <div className="row align-items-stretch">
-                {movies?.map((movie: Movie) => (
+                {movies.map((movie: Movie) => (
                   <div
                     className="col col-6 col-md-4 col-lg-3 mb-4"
                     key={movie.original_title}
