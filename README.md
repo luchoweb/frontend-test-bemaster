@@ -1,5 +1,8 @@
 # Frontend Test - BeMaster
 
+#### Pre-requisites
+- Node.js (20+)
+
 #### .ENV File
 ```bash
 # FIREBASE
@@ -11,13 +14,9 @@ VITE_FIREBASE_SENDER_ID = ""
 VITE_FIREBASE_APP_ID = ""
 
 # MOVIES API
-VITE_MOVIES_API_KEY = ""
 VITE_MOVIES_API_TOKEN = ""
-VITE_MOVIES_BASE_URL_POSTER = ""
-VITE_MOVIES_BASE_URL_BG = ""
-VITE_MOVIES_BASE_URL_LOGO = ""
 ```
 
-Este archivo será enviado en el correo de entrega de la prueba.
+Este archivo con las variables de entorno será enviado en el correo de entrega de la prueba.
 
 By Lucho Web
