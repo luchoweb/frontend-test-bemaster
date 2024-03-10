@@ -1,7 +1,6 @@
 import { SyntheticEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Movie } from "../../types";
-import { getMovieYear } from "../../utils/dates";
 
 import "./style.scss";
 
@@ -91,11 +90,6 @@ const MovieHero = ({ movie }: Props) => {
               </div>
 
               <div className="movie-more-info d-flex align-items-center gap-4">
-                <p className="m-0 text-light">
-                  <strong>Release date</strong>:{" "}
-                  {getMovieYear(movie.release_date)}
-                </p>
-
                 <p className="m-0 text-light">
                   <strong>Duration</strong>: {(movie.runtime / 60).toFixed(0)}h{" "}
                   {(movie.runtime / 60).toFixed(2).split(".")[1]}m

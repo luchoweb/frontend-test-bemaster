@@ -1,5 +1,5 @@
 import { ReactNode, useContext } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, ScrollRestoration } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { Loader } from ".";
 
@@ -14,7 +14,12 @@ const PrivateRoute = ({ children }: Props) => {
     return <Navigate to="/" replace />;
   }
 
-  return isLoading ? <Loader /> : children;
+  return isLoading ? <Loader /> : (
+    <>
+      {children}
+      <ScrollRestoration />
+    </>
+  );
 };
 
 export default PrivateRoute;

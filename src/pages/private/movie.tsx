@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getMovieInfo } from "../../services/api-movies";
 import { Company, Movie } from "../../types";
+import { getMovieYear } from "../../utils/dates";
+import { formatCurrency } from "../../utils/format";
 
 import Layout from "./layout";
 import { Loader, MovieHero } from "../../components";
@@ -43,8 +45,42 @@ const MoviePage = () => {
 
             <section className="bg-light movie-overview pt-4 pb-5">
               <div className="container">
-                <h3 className="mb-4">Overview</h3>
-                <p className="m-0">{movie.overview}</p>
+                <div className="row">
+                  <div className="col-12 col-md-7 col-lg-8 mb-4">
+                    <h3 className="mb-4">Overview</h3>
+                    <p className="m-0">{movie.overview}</p>
+                  </div>
+                  <div className="col-12 col-md-5 col-lg-4">
+                    <h5 className="mb-3">More information</h5>
+
+                    <ul className="movie-more-info">
+                      <li>
+                        <p className="m-0">
+                          <strong>Rating</strong>:{" "}
+                          <span>{movie.vote_average.toFixed(1)} ({movie.vote_count} votes)</span>
+                        </p>
+                      </li>
+                      <li>
+                        <p className="m-0">
+                          <strong>Release date</strong>:{" "}
+                          {getMovieYear(movie.release_date)}
+                        </p>
+                      </li>
+                      <li>
+                        <p className="m-0">
+                          <strong>Budget</strong>:{" "}
+                          {formatCurrency(movie.budget)}
+                        </p>
+                      </li>
+                      <li>
+                        <p className="m-0">
+                          <strong>Revenue</strong>:{" "}
+                          {formatCurrency(movie.revenue)}
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>                
               </div>
             </section>
 
@@ -54,7 +90,7 @@ const MoviePage = () => {
 
                 <div className="row align-items-center">
                   {movie.production_companies?.map((company: Company) => (
-                    <div className="col-4 col-md-3 col-lg-2 mb-4 text-center text-md-start">
+                    <div className="col-4 col-md-3 col-lg-2 mb-4 text-center text-md-start" key={company.id}>
                       {company.logo_path ? (
                         <picture className="company-logo mb-3 d-block">
                           <img

@@ -20,4 +20,8 @@ export type Movie = {
   genres: [Genre];
   production_companies: [Company];
   runtime: number;
+  budget: number;
+  revenue: number;
+  vote_average: number;
+  vote_count: number;
 };
