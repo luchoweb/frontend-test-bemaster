@@ -1,10 +1,20 @@
+$headerHeight: 72px;
+
 .movie {
   background-position: center center;
   background-size: cover;
   position: relative;
+  margin-top: -$headerHeight;
+  padding-top: $headerHeight + 20;
+
+  &-page {
+    header {
+      background: transparent !important;
+    }
+  }
 
   &-overlay {
-    background-color: rgba($color: #000000, $alpha: 0.75);
+    background-color: rgba($color: #000000, $alpha: 0.70);
     position: absolute;
     bottom: 0;
     top: 0;

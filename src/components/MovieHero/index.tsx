@@ -23,7 +23,7 @@ const MovieHero = ({ movie }: Props) => {
   return (
     movie && (
       <section
-        className="movie pt-4 pb-5"
+        className="movie pb-5"
         style={{
           backgroundImage: `url(${bgBaseUrl}${movie.backdrop_path})`,
         }}

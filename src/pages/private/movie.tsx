@@ -32,7 +32,7 @@ const MoviePage = () => {
   console.log(movie);
 
   return (
-    <Layout>
+    <Layout classesName="movie-page">
       {isLoading ? (
         <div className="text-center py-5">
           <Loader type="icon" />

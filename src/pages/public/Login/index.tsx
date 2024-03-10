@@ -37,11 +37,20 @@ const LoginPage = () => {
 
   return (
     <main className="login">
+      <div className="login-overlay"></div>
       <section className="login-box text-center">
         <figcaption className="login-logo mb-3">
           <img src="/images/jedi-logo.png" alt="JEDI+" height={50} />
           <figcaption className="text-light">TV</figcaption>
         </figcaption>
+
+        {error && (
+            <div className="alert alert-danger">
+              <p className="m-0">
+                <small>{errorTranslate(errorMsg)}</small>
+              </p>
+            </div>
+          )}
 
         <div className="login-form p-3">
           <div className="form-group mb-3">
@@ -65,14 +74,6 @@ const LoginPage = () => {
               onKeyUp={(e) => setPassword((e.target as HTMLInputElement).value)}
             />
           </div>
-
-          {error && (
-            <div className="alert alert-danger">
-              <p className="m-0">
-                <small>{errorTranslate(errorMsg)}</small>
-              </p>
-            </div>
-          )}
 
           <button className="btn btn-secondary w-100" onClick={() => login()}>
             <i className="bi bi-box-arrow-in-right me-2"></i>

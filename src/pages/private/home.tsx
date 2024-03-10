@@ -20,7 +20,7 @@ const HomePage = () => {
   }, [genres]);
 
   return (
-    <Layout>
+    <Layout classesName="movie-page">
       <HomeHero />
 
       <div className="container">
