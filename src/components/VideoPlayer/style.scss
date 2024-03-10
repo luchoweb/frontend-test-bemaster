@@ -7,11 +7,7 @@
   top: 0;
 
   iframe {
-    height: 95vh;
-
-    @media (min-width: 768px) {
-      height: 100vh;
-    }
+    height: 100dvh;
   }
 
   .btn {
