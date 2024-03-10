@@ -13,14 +13,14 @@ const MovieCompanies = ({ companies }: Props) => {
       <div className="container">
         <h4 className="mb-4">Production Companies</h4>
 
-        <div className="row align-items-center">
+        <div className="row align-items-center justify-content-center justify-content-lg-start">
           {companies.map((company: Company) => (
             <div
-              className="col-4 col-md-3 col-lg-2 mb-4 text-center text-md-start"
+              className="col-6 col-md-4 col-lg-2 mb-4"
               key={company.id}
             >
               {company.logo_path ? (
-                <picture className="company-logo mb-3 d-block" title={company.name}>
+                <picture className="company-logo mb-3 d-block w-100 text-center text-lg-start" title={company.name}>
                   <img
                     src={`${imageBaseUrl}${company.logo_path}`}
                     alt={company.name}
@@ -28,7 +28,7 @@ const MovieCompanies = ({ companies }: Props) => {
                   />
                 </picture>
               ) : (
-                <p className="m-0">{company.name}</p>
+                <p className="m-0 text-center text-lg-start">{company.name}</p>
               )}
             </div>
           ))}
