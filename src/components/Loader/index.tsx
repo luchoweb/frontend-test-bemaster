@@ -1,10 +1,16 @@
 import "./style.scss";
 
-const Loader = () => {
-  return (
+interface Props {
+  type?: string
+}
+
+const Loader = ({ type }: Props) => {
+  return type === "screen" ? (
     <div className="loader">
       <div className="loader-icon"></div>
     </div>
+  ) : (
+    <div className="loader-icon mx-auto"></div>
   )
 }
 

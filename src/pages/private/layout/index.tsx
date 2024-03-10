@@ -1,5 +1,7 @@
 import { ReactNode } from "react"
-import { Footer, Header } from "../../components";
+import { Footer, Header } from "../../../components";
+
+import "./style.scss";
 
 interface Props {
   children: ReactNode,
@@ -9,7 +11,9 @@ const Layout = ({ children }: Props) => {
   return (
     <main className="layout">
       <Header />
-      {children}
+      <div className="layout-content">
+        {children}
+      </div>
       <Footer />
     </main>
   )

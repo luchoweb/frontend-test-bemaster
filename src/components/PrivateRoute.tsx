@@ -14,7 +14,7 @@ const PrivateRoute = ({ children }: Props) => {
     return <Navigate to="/" replace />;
   }
 
-  return isLoading ? <Loader /> : children;
+  return isLoading ? <Loader type="screen" /> : children;
 };
 
 export default PrivateRoute;

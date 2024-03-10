@@ -7,20 +7,21 @@ import Layout from "./layout";
 import { MovieHero } from "../../components";
 
 const MoviePage = () => {
-  const { id: movieId } = useParams();
+  const { slug } = useParams();
+  const params = slug?.split("-");
 
   const [movie, setMovie] = useState<Movie | undefined>();
 
   useEffect(() => {
     const getMovie = async () => {
-      const response = await getMovieInfo(movieId);
+      const response = await getMovieInfo(params?.[0]);
       if (response?.movie) {
         setMovie(response.movie);
       }
     };
 
     getMovie();
-  }, [movieId]);
+  }, [slug]);
 
   console.log(movie)
 

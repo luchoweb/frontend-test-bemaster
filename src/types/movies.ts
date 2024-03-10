@@ -10,6 +10,7 @@ export type Company = {
 };
 
 export type Movie = {
+  id: number;
   original_title: string;
   poster_path: string;
   backdrop_path: string;

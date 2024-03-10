@@ -4,6 +4,7 @@ import { Movie } from "../../types/movies";
 import { getMovieYear } from "../../utils/dates";
 
 import "./style.scss";
+import { SyntheticEvent } from "react";
 
 interface Props {
   movie: Movie | undefined;
@@ -14,6 +15,10 @@ const MovieHero = ({ movie }: Props) => {
     VITE_MOVIES_BASE_URL_POSTER: posterBaseUrl,
     VITE_MOVIES_BASE_URL_BG: bgBaseUrl,
   } = import.meta.env;
+
+  const addDefaultPoster = (ev: SyntheticEvent<HTMLImageElement, Event>) => {
+    (ev.target as HTMLImageElement).src = "/images/no-poster.jpeg";
+  };
 
   return (
     movie && (
@@ -32,6 +37,7 @@ const MovieHero = ({ movie }: Props) => {
                   className="w-100"
                   src={`${posterBaseUrl}${movie.poster_path}`}
                   alt={`${movie.original_title} Poster`}
+                  onError={addDefaultPoster}
                 />
               </picture>
             </div>
@@ -47,7 +53,10 @@ const MovieHero = ({ movie }: Props) => {
                   movie.genres.map((gender) => (
                     <li key={gender.name}>
                       <Link
-                        to={`/category/${gender.id}`}
+                        to={`/genre/${gender.id}${gender.name.replace(
+                          " ",
+                          "-"
+                        )}`}
                         className="text-decoration-none text-light me-2"
                       >
                         {gender.name}
@@ -78,8 +87,7 @@ const MovieHero = ({ movie }: Props) => {
                 </p>
 
                 <p className="m-0 text-light">
-                  <strong>Duration</strong>:{" "}
-                  {(movie.runtime / 60).toFixed(0)}h{" "}
+                  <strong>Duration</strong>: {(movie.runtime / 60).toFixed(0)}h{" "}
                   {(movie.runtime / 60).toFixed(2).split(".")[1]}m
                 </p>
               </div>

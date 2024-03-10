@@ -1,0 +1,39 @@
+.movie-card {
+  background: rgb(33, 37, 41);
+  background: linear-gradient(
+    0deg,
+    rgba(33, 37, 41, 1) 0%,
+    rgba(53, 60, 66, 1) 100%
+  );
+  border-radius: 5px;
+  box-shadow: 0 4px 7px #000;
+  display: grid;
+  height: 168px;
+  place-content: center center;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &-overlay {
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 0;
+  }
+
+  &-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-shadow: 0 0 5px black;
+    z-index: 1;
+  }
+}

@@ -1,0 +1,9 @@
+.layout {
+  header {
+    z-index: 9999;
+  }
+
+  &-content {
+    min-height: 88vh;
+  }
+}

@@ -24,9 +24,9 @@ export const getCategories = async () => {
     });
 };
 
-export const getMoviesByCategory = async (categoryId: string | undefined, page: string | undefined) => {
+export const getMoviesByGenre = async (genreId: string | undefined, page: string | undefined) => {
   return axios
-    .get(`${baseURL}/list/${categoryId}?language=en-US&page=${page ?? 1}`, {
+    .get(`${baseURL}/list/${genreId}?language=en-US&page=${page ?? 1}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

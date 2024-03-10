@@ -1,7 +1,7 @@
 const commonErrors = [
   {
     code: "auth/invalid-credential",
-    message: "Please check your credentials.",
+    message: "Incorrect email or password.",
   },
   {
     code: "general",

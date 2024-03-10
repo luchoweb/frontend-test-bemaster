@@ -5,7 +5,7 @@ import { PrivateRoute } from "./components";
 import { LoginPage } from "./pages/public";
 
 // Private Pages
-import { CategoryPage, HomePage, MoviePage } from "./pages/private";
+import { GenrePage, HomePage, MoviePage } from "./pages/private";
 
 export const router = createBrowserRouter([
   {
@@ -21,7 +21,7 @@ export const router = createBrowserRouter([
     ),
   },
   {
-    path: "/movie/:id",
+    path: "/movie/:slug",
     element: (
       <PrivateRoute>
         <MoviePage />
@@ -29,10 +29,10 @@ export const router = createBrowserRouter([
     ),
   },
   {
-    path: "/category/:id",
+    path: "/genre/:slug/:page?",
     element: (
       <PrivateRoute>
-        <CategoryPage />
+        <GenrePage />
       </PrivateRoute>
     ),
   },
