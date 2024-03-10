@@ -2,16 +2,16 @@
   {
     "icon": "house",
     "label": "Home",
-    "link": "/home"
+    "href": "/home"
   },
   {
     "icon": "list-ul",
-    "label": "Categories",
-    "link": "/categories"
+    "label": "Genres",
+    "href": "/genres"
   },
   {
     "icon": "gear",
     "label": "Settings",
-    "link": "/settings"
+    "href": "/settings"
   }
 ]

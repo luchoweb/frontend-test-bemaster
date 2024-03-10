@@ -11,8 +11,8 @@ const Navbar = ({ theme }: Props) => {
     <nav className={`navbar ${theme}`}>
       <ul className="menu list-unstyled m-0 p-0 d-flex align-items.center gap-4">
         {links.map((link) => (
-          <li className="menu-item" key={`item-${link.link}`}>
-            <Link to="/home" className={`menu-link text-${theme} text-decoration-none`}>
+          <li className="menu-item" key={`item-${link.href}`}>
+            <Link to={link.href} className={`menu-link text-${theme} text-decoration-none`}>
               <i className={`bi bi-${link.icon} me-2`}></i>
               <span className="d-none d-md-inline-block">{link.label}</span>
             </Link>
