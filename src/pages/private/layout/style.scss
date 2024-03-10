@@ -4,6 +4,6 @@
   }
 
   &-content {
-    min-height: 88vh;
+    min-height: calc(100dvh - 112px);
   }
 }
