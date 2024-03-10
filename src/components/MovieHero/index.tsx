@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Movie } from "../../types";
 
 import "./style.scss";
+import { APP } from "../../utils/constants";
 
 interface Props {
   movie: Movie | undefined;
@@ -11,10 +12,8 @@ interface Props {
 const MovieHero = ({ movie }: Props) => {
   const navigate = useNavigate();
 
-  const {
-    VITE_MOVIES_BASE_URL_POSTER: posterBaseUrl,
-    VITE_MOVIES_BASE_URL_BG: bgBaseUrl,
-  } = import.meta.env;
+  const { BASE_URL_MOVIE_POSTER: posterBaseUrl, BASE_URL_MOVIE_BG: bgBaseUrl } =
+    APP;
 
   const addDefaultPoster = (ev: SyntheticEvent<HTMLImageElement, Event>) => {
     (ev.target as HTMLImageElement).src = "/images/no-poster.jpeg";
@@ -65,7 +64,10 @@ const MovieHero = ({ movie }: Props) => {
                   movie.genres.map((gender) => (
                     <li key={gender.name}>
                       <Link
-                        to={`/genre/${gender.id}-${gender.name.replace(/ /g, "-")}`}
+                        to={`/genre/${gender.id}-${gender.name.replace(
+                          / /g,
+                          "-"
+                        )}`}
                         className="text-decoration-none text-light me-2"
                       >
                         {gender.name}
