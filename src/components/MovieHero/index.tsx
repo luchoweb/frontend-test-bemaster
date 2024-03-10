@@ -1,5 +1,5 @@
 import { SyntheticEvent } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Movie } from "../../types";
 import { getMovieYear } from "../../utils/dates";
 
@@ -10,6 +10,8 @@ interface Props {
 }
 
 const MovieHero = ({ movie }: Props) => {
+  const navigate = useNavigate();
+
   const {
     VITE_MOVIES_BASE_URL_POSTER: posterBaseUrl,
     VITE_MOVIES_BASE_URL_BG: bgBaseUrl,
@@ -22,14 +24,26 @@ const MovieHero = ({ movie }: Props) => {
   return (
     movie && (
       <section
-        className="movie py-5"
+        className="movie pt-4 pb-5"
         style={{
           backgroundImage: `url(${bgBaseUrl}${movie.backdrop_path})`,
         }}
       >
         <div className="movie-overlay"></div>
         <div className="container">
-          <div className="row align-items-center">
+          <Link
+            to={"/back"}
+            onClick={(e) => {
+              e.preventDefault();
+              navigate(-1);
+            }}
+            className="text-light text-decoration-none"
+          >
+            <i className="bi bi-arrow-left me-2"></i>
+            <span>Back</span>
+          </Link>
+
+          <div className="row align-items-center mt-4">
             <div className="col col-12 col-md-5 col-lg-4 col-xl-3 mb-4 mb-md-0">
               <picture className="movie-poster">
                 <img
