@@ -64,28 +64,26 @@ const VideoPlayer = () => {
   return isLoading ? (
     <Loader type="screen" />
   ) : (
-    video && (
-      <div className="video-player">
-        <Link
-          to={"/back"}
-          onClick={(e) => {
-            e.preventDefault();
-            navigate(-1);
-          }}
-          className="btn btn-warning"
-        >
-          <i className="bi bi-arrow-left me-2"></i>
-          <span>Back</span>
-        </Link>
+    <div className="video-player">
+      <Link
+        to={"/back"}
+        onClick={(e) => {
+          e.preventDefault();
+          navigate(-1);
+        }}
+        className="btn btn-warning"
+      >
+        <i className="bi bi-arrow-left me-2"></i>
+        <span>Back</span>
+      </Link>
 
-        <YouTube
-          videoId={video.key}
-          opts={opts}
-          onStateChange={onStateChange}
-          onError={onError}
-        />
-      </div>
-    )
+      <YouTube
+        videoId={video?.key}
+        opts={opts}
+        onStateChange={onStateChange}
+        onError={onError}
+      />
+    </div>
   );
 };
 
