@@ -8,6 +8,7 @@ import { router } from "./routes.tsx";
 // Styles
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.min.css";
+import "react-toastify/dist/ReactToastify.css";
 import "./index.scss";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
