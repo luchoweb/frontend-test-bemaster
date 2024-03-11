@@ -4,6 +4,7 @@ import { AuthContext } from "../context/AuthContext";
 import { Loader } from ".";
 
 import "react-toastify/dist/ReactToastify.css";
+import { showToast } from "../utils/toast";
 
 interface Props {
   children: ReactNode;
@@ -13,6 +14,11 @@ const PrivateRoute = ({ children }: Props) => {
   const { user, isLoading } = useContext(AuthContext);
 
   if (!isLoading && !user) {
+    showToast({
+      type: "error",
+      message: "Please log in"
+    });
+
     return <Navigate to="/" replace />;
   }
 
