@@ -4,6 +4,7 @@ import { Movie } from "../../types";
 
 import "./style.scss";
 import { APP } from "../../utils/constants";
+import { showToast } from "../../utils/toast";
 
 interface Props {
   movie: Movie | undefined;
@@ -77,15 +78,32 @@ const MovieHero = ({ movie }: Props) => {
               </ul>
 
               <div className="movie-buttons d-flex gap-4 align-items-center mb-4">
-                <Link to={`/player/${movie.id}`} className="btn btn-light py-2 px-4">
+                <Link
+                  to={`/player/${movie.id}`}
+                  className="btn btn-light py-2 px-4"
+                >
                   <i className="bi bi-play me-2"></i> Play Now
                 </Link>
 
-                <button className="btn btn-lg p-0" title="Add to Favorites">
+                <button
+                  className="btn btn-lg p-0"
+                  title="Add to Favorites"
+                  onClick={() =>
+                    showToast({
+                      type: "success",
+                      message: "Movie added to favorites",
+                    })
+                  }
+                >
                   <i className="bi bi-bookmark text-light"></i>
                 </button>
 
-                <button className="btn btn-lg p-0" title="Watch later">
+                <button className="btn btn-lg p-0" title="Watch later" onClick={() =>
+                    showToast({
+                      type: "success",
+                      message: "Movie added to watch later",
+                    })
+                  }>
                   <i className="bi bi-clock text-light"></i>
                 </button>
               </div>

@@ -2,8 +2,17 @@ import { Link } from "react-router-dom";
 import { signOut } from "../../firebase/utils";
 import Navbar from "../Navbar";
 import { APP } from "../../utils/constants";
+import { showToast } from "../../utils/toast";
 
 const Header = () => {
+  const logout = () => {
+    showToast({
+      type: "success",
+      message: "You have logged out",
+    });
+    signOut();
+  };
+
   return (
     <header className="bg-dark py-3 position-relative">
       <div className="container">
@@ -17,7 +26,7 @@ const Header = () => {
             <Navbar theme="light" />
           </div>
           <div className="col col-3 col-md-2 col-xl-1 text-end">
-            <button className="btn btn-sm btn-danger" onClick={() => signOut()}>
+            <button className="btn btn-sm btn-danger" onClick={() => logout()}>
               <i className="bi bi-box-arrow-right"></i>
             </button>
           </div>

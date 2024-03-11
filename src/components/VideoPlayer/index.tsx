@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import YouTube, { YouTubeProps } from "react-youtube";
 import { getMovieVideos } from "../../services/api-movies";
+import { showToast } from "../../utils/toast";
 import { Video } from "../../types";
-
 import { Loader } from "..";
+
 import "./style.scss";
-import { toast } from "react-toastify";
 
 const VideoPlayer = () => {
   const { id: videoId } = useParams();
@@ -17,31 +17,21 @@ const VideoPlayer = () => {
 
   const onStateChange: YouTubeProps["onStateChange"] = (event) => {
     if (!event.data) {
-      toast("The movie has ended.", {
-        position: "top-center",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
+      showToast({
+        type: "info",
+        message: "The movie has ended",
       });
+
       navigate(-1);
     }
   };
 
   const onError: YouTubeProps["onError"] = () => {
-    toast.error("An unexpected error has ocurred", {
-      position: "top-center",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
+    showToast({
+      type: "error",
+      message: "Movie not available",
     });
+
     navigate(-1);
   };
 
