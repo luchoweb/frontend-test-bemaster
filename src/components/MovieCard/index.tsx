@@ -21,7 +21,15 @@ const MovieCard = ({ movie }: Props) => {
         backgroundImage: `url(${bgBaseUrl}${movie.poster_path})`,
         backgroundSize: "cover",
       }}
-    ></Link>
+    >
+      {!movie.poster_path && (
+        <>
+          <span className="movie-card-name text-light">
+            {movie.original_title}
+          </span>
+        </>
+      )}
+    </Link>
   );
 };
 
