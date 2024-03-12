@@ -1,20 +1,16 @@
 .movie-card {
-  background: rgb(33, 37, 41);
-  background: linear-gradient(
-    0deg,
-    rgba(33, 37, 41, 1) 0%,
-    rgba(53, 60, 66, 1) 100%
-  );
+  background-size: cover;
+  background-position: top center;
   border-radius: 5px;
   box-shadow: 0 4px 7px #000;
   display: grid;
-  height: 168px;
+  height: 370px;
   place-content: center center;
   position: relative;
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 
   &-overlay {
