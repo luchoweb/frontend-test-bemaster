@@ -15,7 +15,7 @@ const PrivateRoute = ({ children }: Props) => {
   }
 
   return isLoading ? (
-    <Loader type="screen" />
+    <Loader fullscreen={true} />
   ) : (
     <>
       {children}

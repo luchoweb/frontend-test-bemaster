@@ -62,7 +62,7 @@ const VideoPlayer = () => {
   }, []);
 
   return isLoading ? (
-    <Loader type="screen" />
+    <Loader fullscreen={true} />
   ) : (
     <div className="video-player">
       <BackBtn className="btn btn-warning" />

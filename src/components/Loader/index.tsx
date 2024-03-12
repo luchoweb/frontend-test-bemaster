@@ -1,17 +1,17 @@
 import "./style.scss";
 
 interface Props {
-  type?: string
+  fullscreen?: boolean;
 }
 
-const Loader = ({ type }: Props) => {
-  return type === "screen" ? (
+const Loader = ({ fullscreen }: Props) => {
+  return fullscreen ? (
     <div className="loader">
       <div className="loader-icon"></div>
     </div>
   ) : (
     <div className="loader-icon mx-auto"></div>
-  )
-}
+  );
+};
 
 export default Loader;

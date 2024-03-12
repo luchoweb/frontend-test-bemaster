@@ -29,7 +29,7 @@ const MoviePage = () => {
     <Layout classesName="movie-page">
       {isLoading ? (
         <div className="text-center py-5">
-          <Loader type="icon" />
+          <Loader />
           <p className="text-center text-light mt-4 m-0">Loading content...</p>
         </div>
       ) : (
