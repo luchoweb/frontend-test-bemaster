@@ -2,10 +2,12 @@ import { Link, useNavigate } from "react-router-dom";
 
 interface Props {
   label?: string;
+  className?: string;
 }
 
-const BackBtn = ({ label }: Props) => {
+const BackBtn = ({ label, className }: Props) => {
   const navigate = useNavigate();
+  const classesName = className ?? "text-light text-decoration-none";
 
   return (
     <Link
@@ -14,7 +16,7 @@ const BackBtn = ({ label }: Props) => {
         e.preventDefault();
         navigate(-1);
       }}
-      className="text-light text-decoration-none"
+      className={classesName}
     >
       <i className="bi bi-arrow-left me-2"></i>
       <span>{label ?? "Back"}</span>

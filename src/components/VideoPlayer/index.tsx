@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import YouTube, { YouTubeProps } from "react-youtube";
 import { getMovieVideos } from "../../services/api-movies";
 import { showToast } from "../../utils/toast";
 import { Video } from "../../types";
-import { Loader } from "..";
+import { BackBtn, Loader } from "..";
 
 import "./style.scss";
 
@@ -65,17 +65,7 @@ const VideoPlayer = () => {
     <Loader type="screen" />
   ) : (
     <div className="video-player">
-      <Link
-        to={"/back"}
-        onClick={(e) => {
-          e.preventDefault();
-          navigate(-1);
-        }}
-        className="btn btn-warning"
-      >
-        <i className="bi bi-arrow-left me-2"></i>
-        <span>Back</span>
-      </Link>
+      <BackBtn className="btn btn-warning" />
 
       <YouTube
         videoId={video?.key}
