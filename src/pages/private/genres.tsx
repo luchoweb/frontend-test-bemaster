@@ -1,14 +1,11 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import { getCategories } from "../../services/api-movies";
 import { Genre } from "../../types";
 
-import { GenreCard, Loader, NoContent } from "../../components";
+import { BackBtn, GenreCard, Loader, NoContent } from "../../components";
 import Layout from "./layout";
 
 const GenresPage = () => {
-  const navigate = useNavigate();
-
   const [genres, setGenres] = useState<[Genre] | []>();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -37,17 +34,7 @@ const GenresPage = () => {
             </div>
           ) : !isLoading && genres?.length ? (
             <>
-              <Link
-                to={"/back"}
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigate(-1);
-                }}
-                className="text-light text-decoration-none"
-              >
-                <i className="bi bi-arrow-left me-2"></i>
-                <span>Back</span>
-              </Link>
+              <BackBtn />
 
               <h3 className="text-light mt-3 mb-3">Genres</h3>
 

@@ -1,3 +1,4 @@
+export { default as BackBtn } from "./BackBtn";
 export { default as GenreCard } from "./GenreCard";
 export { default as Footer } from "./Footer";
 export { default as Header } from "./Header";

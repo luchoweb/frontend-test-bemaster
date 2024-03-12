@@ -1,18 +1,17 @@
 import { SyntheticEvent } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Movie } from "../../types";
 
 import "./style.scss";
 import { APP } from "../../utils/constants";
 import { showToast } from "../../utils/toast";
+import { BackBtn } from "..";
 
 interface Props {
   movie: Movie | undefined;
 }
 
 const MovieHero = ({ movie }: Props) => {
-  const navigate = useNavigate();
-
   const { BASE_URL_MOVIE_POSTER: posterBaseUrl, BASE_URL_MOVIE_BG: bgBaseUrl } =
     APP;
 
@@ -30,17 +29,7 @@ const MovieHero = ({ movie }: Props) => {
       >
         <div className="movie-overlay"></div>
         <div className="container">
-          <Link
-            to={"/back"}
-            onClick={(e) => {
-              e.preventDefault();
-              navigate(-1);
-            }}
-            className="text-light text-decoration-none"
-          >
-            <i className="bi bi-arrow-left me-2"></i>
-            <span>Back</span>
-          </Link>
+          <BackBtn />
 
           <div className="row align-items-center mt-4">
             <div className="col col-12 col-md-5 col-lg-4 col-xl-3 mb-4 mb-md-0">
