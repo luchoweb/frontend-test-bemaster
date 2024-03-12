@@ -64,7 +64,7 @@ const LoginPage = () => {
               placeholder="your@email.com"
               autoComplete="off"
               required
-              onKeyUp={(e) => setEmail((e.target as HTMLInputElement).value)}
+              onChange={(e) => setEmail((e.target as HTMLInputElement).value)}
             />
           </div>
 
@@ -75,7 +75,7 @@ const LoginPage = () => {
               placeholder="Y0urP455w0r#"
               autoComplete="off"
               required
-              onKeyUp={(e) => setPassword((e.target as HTMLInputElement).value)}
+              onChange={(e) => setPassword((e.target as HTMLInputElement).value)}
             />
           </div>
 
