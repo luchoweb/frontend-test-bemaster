@@ -5,7 +5,7 @@
 
 #### Instalación
 
-1. Descargar el .zip del Release 1.0 (versión sin cambios nuevos).
+1. Clonar el repositorio o descargar el .zip
 2. Dentro de la carpeta raíz ejecutar ```npm install```
 3. Renombrar el archivo env.local enviado por correo electrónico a ```.env.local``` y agregarlo al directorio raíz del proyecto.
 4. Para iniciar el proyecto ejecutar ```npm run dev```
