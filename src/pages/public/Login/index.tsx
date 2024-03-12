@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {signIn } from "../../../firebase/utils";
+import { signIn } from "../../../firebase/utils";
 import { emailValidation } from "../../../utils/validations";
 import { errorTranslate } from "../../../utils/errors";
 
@@ -21,7 +21,7 @@ const LoginPage = () => {
       return;
     }
 
-    if ((email && password) && emailValidation(email)) {
+    if (email && password) {
       const response = await signIn({ email, password });
 
       if (response.error) {
@@ -32,7 +32,11 @@ const LoginPage = () => {
 
       setError(false);
       navigate("/home");
+      return;
     }
+
+    setError(true);
+    setErrorMsg("invalid-password");
   };
 
   return (
@@ -45,12 +49,12 @@ const LoginPage = () => {
         </figcaption>
 
         {error && (
-            <div className="alert alert-danger">
-              <p className="m-0">
-                <small>{errorTranslate(errorMsg)}</small>
-              </p>
-            </div>
-          )}
+          <div className="alert alert-danger">
+            <p className="m-0">
+              <small>{errorTranslate(errorMsg)}</small>
+            </p>
+          </div>
+        )}
 
         <div className="login-form p-3">
           <div className="form-group mb-3">

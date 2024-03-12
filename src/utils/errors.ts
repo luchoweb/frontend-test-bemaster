@@ -11,6 +11,10 @@ const commonErrors = [
     code: "invalid-email",
     message: "Please check your email.",
   },
+  {
+    code: "invalid-password",
+    message: "Please enter your password.",
+  },
 ];
 
 export const errorTranslate = (error: string) => {
