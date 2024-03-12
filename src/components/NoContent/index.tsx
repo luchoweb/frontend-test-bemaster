@@ -1,8 +1,6 @@
-import { Link, useNavigate } from "react-router-dom";
+import { BackBtn } from "..";
 
 const NoContent = () => {
-  const navigate = useNavigate();
-
   return (
     <div className="no-content text-center py-5">
       <picture className="yoda">
@@ -15,17 +13,7 @@ const NoContent = () => {
         <em>"If a movie you want, move to another category you must." -Yoda</em>
       </p>
 
-      <Link
-        to={"/back"}
-        onClick={(e) => {
-          e.preventDefault();
-          navigate(-1);
-        }}
-        className="btn btn-outline-light mt-4"
-      >
-        <i className="bi bi-arrow-left me-2"></i>
-        <span>Back</span>
-      </Link>
+      <BackBtn className="btn btn-outline-light mt-4" />
     </div>
   );
 };
