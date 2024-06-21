@@ -44,6 +44,8 @@ Este archivo con las variables de entorno será enviado en el correo de entrega 
 
 El sitio ha sido desplegado en [Netlify](https://jedi-tv.netlify.app).
 
+Acceso: de@mo.co | demo123
+
 ---
 
 Eso es todo, gracias por el tiempo de revisar la prueba y agradezco el feedback que puedan darme.
