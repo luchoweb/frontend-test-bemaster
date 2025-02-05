@@ -1,5 +1,9 @@
 # Frontend Test - BeMaster
 
+![image](https://github.com/user-attachments/assets/158a88e4-aed5-408d-9608-a4fe50940568)
+
+---
+
 #### Pre-requisitos
 - Node.js (20+)
 
